@@ -1,0 +1,18 @@
+sudo apt-get update
+sudo apt-get install mysql-server mysql-client
+sudo apt-get install apache2
+
+[ настройка apache2 ]
+
+sudo systemctl restart apache2
+sudo apt-get install php php-cgi libapache2-mod-php php-common php-pear php-mbstring
+sudo a2enconf php7.0-cgi
+sudo systemctl reload apache2
+sudo apt-get install phpmyadmin php-gettext
+
+[ настройка phpmyadmin ]
+Include /etc/phpmyadmin/apache.conf
+sudo systemctl reload apache2
+
+sudo apt-get install php7.0-curl
+sudo systemctl reload apache2
